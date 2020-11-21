@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7ef1e0bb87d7dcbe059362f419635260",
+    "content-hash": "c3ad101370360503b230fd56f87abcfc",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -129,6 +129,59 @@
                 }
             ],
             "time": "2020-08-18T23:41:20+00:00"
+        },
+        {
+            "name": "caouecs/laravel-lang",
+            "version": "4.0.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/caouecs/lang.git",
+                "reference": "134e1cbf9be14d97fc7937d7df784eae2d4bfa3c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/caouecs/lang/zipball/134e1cbf9be14d97fc7937d7df784eae2d4bfa3c",
+                "reference": "134e1cbf9be14d97fc7937d7df784eae2d4bfa3c",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "ext-json": "*"
+            },
+            "suggest": {
+                "ablunier/laravel-lang-installer": "Command for easily add languages to a Laravel project",
+                "andrey-helldar/laravel-lang-publisher": "Easy installation and update of translation files for your project",
+                "arcanedev/laravel-lang": "Translations manager and checker for Laravel 5",
+                "overtrue/laravel-lang": "Command to add languages in your project"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "caouecs",
+                    "email": "caouecs@caouecs.net"
+                }
+            ],
+            "description": "Languages for Laravel",
+            "keywords": [
+                "lang",
+                "languages",
+                "laravel",
+                "lpm"
+            ],
+            "support": {
+                "source": "https://github.com/caouecs/lang/tree/4.0.11"
+            },
+            "abandoned": "https://github.com/Laravel-Lang/lang",
+            "time": "2020-03-17T15:24:26+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -968,6 +1021,86 @@
             "time": "2020-09-30T07:37:11+00:00"
         },
         {
+            "name": "intervention/image",
+            "version": "2.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/image.git",
+                "reference": "abbf18d5ab8367f96b3205ca3c89fb2fa598c69e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/abbf18d5ab8367f96b3205ca3c89fb2fa598c69e",
+                "reference": "abbf18d5ab8367f96b3205ca3c89fb2fa598c69e",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "ext-fileinfo": "*",
+                "guzzlehttp/psr7": "~1.1",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.2",
+                "phpunit/phpunit": "^4.8 || ^5.7"
+            },
+            "suggest": {
+                "ext-gd": "to use GD library based image processing.",
+                "ext-imagick": "to use Imagick based image processing.",
+                "intervention/imagecache": "Caching extension for the Intervention Image library"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Intervention\\Image\\ImageServiceProvider"
+                    ],
+                    "aliases": {
+                        "Image": "Intervention\\Image\\Facades\\Image"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Intervention\\Image\\": "src/Intervention/Image"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@olivervogel.com",
+                    "homepage": "http://olivervogel.com/"
+                }
+            ],
+            "description": "Image handling and manipulation library with support for Laravel integration",
+            "homepage": "http://image.intervention.io/",
+            "keywords": [
+                "gd",
+                "image",
+                "imagick",
+                "laravel",
+                "thumbnail",
+                "watermark"
+            ],
+            "support": {
+                "issues": "https://github.com/Intervention/image/issues",
+                "source": "https://github.com/Intervention/image/tree/master"
+            },
+            "time": "2019-11-02T09:15:47+00:00"
+        },
+        {
             "name": "laravel/framework",
             "version": "v8.15.0",
             "source": {
@@ -1484,6 +1617,85 @@
             "time": "2020-10-18T11:50:25+00:00"
         },
         {
+            "name": "mews/captcha",
+            "version": "3.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mewebstudio/captcha.git",
+                "reference": "b5549a90110ec6c32a93073aba3ea9ade288c6f7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mewebstudio/captcha/zipball/b5549a90110ec6c32a93073aba3ea9ade288c6f7",
+                "reference": "b5549a90110ec6c32a93073aba3ea9ade288c6f7",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "ext-gd": "*",
+                "illuminate/config": "~5|^6|^7|^8",
+                "illuminate/filesystem": "~5|^6|^7|^8",
+                "illuminate/hashing": "~5|^6|^7|^8",
+                "illuminate/session": "~5|^6|^7|^8",
+                "illuminate/support": "~5|^6|^7|^8",
+                "intervention/image": "~2.5",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "phpunit/phpunit": "^8.5"
+            },
+            "type": "package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Mews\\Captcha\\CaptchaServiceProvider"
+                    ],
+                    "aliases": {
+                        "Captcha": "Mews\\Captcha\\Facades\\Captcha"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Mews\\Captcha\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Muharrem ERİN",
+                    "email": "me@mewebstudio.com",
+                    "homepage": "https://github.com/mewebstudio",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel 5 & 6 Captcha Package",
+            "homepage": "https://github.com/mewebstudio/captcha",
+            "keywords": [
+                "captcha",
+                "laravel5 Security",
+                "laravel6 Captcha",
+                "laravel6 Security"
+            ],
+            "support": {
+                "issues": "https://github.com/mewebstudio/captcha/issues",
+                "source": "https://github.com/mewebstudio/captcha/tree/3.2.3"
+            },
+            "time": "2020-11-03T19:44:37+00:00"
+        },
+        {
             "name": "monolog/monolog",
             "version": "2.1.1",
             "source": {
@@ -1815,6 +2027,79 @@
                 "source": "https://github.com/opis/closure/tree/3.6.1"
             },
             "time": "2020-11-07T02:01:34+00:00"
+        },
+        {
+            "name": "overtrue/laravel-lang",
+            "version": "3.0.18",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/overtrue/laravel-lang.git",
+                "reference": "d69824be235f6142e3e4226d9918da76e4727774"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/overtrue/laravel-lang/zipball/d69824be235f6142e3e4226d9918da76e4727774",
+                "reference": "d69824be235f6142e3e4226d9918da76e4727774",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "caouecs/laravel-lang": "~4.0",
+                "symfony/process": "^5.0.0"
+            },
+            "require-dev": {
+                "laravel/framework": "~7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Overtrue\\LaravelLang\\TranslationServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Overtrue\\LaravelLang\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "overtrue",
+                    "email": "anzhengchao@gmail.com"
+                }
+            ],
+            "description": "List of 52 languages for Laravel 5",
+            "keywords": [
+                "i18n",
+                "languages",
+                "laravel",
+                "locale",
+                "overtrue"
+            ],
+            "support": {
+                "issues": "https://github.com/overtrue/laravel-lang/issues",
+                "source": "https://github.com/overtrue/laravel-lang/tree/3.0.18"
+            },
+            "funding": [
+                {
+                    "url": "https://www.patreon.com/overtrue",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2020-03-06T02:39:28+00:00"
         },
         {
             "name": "phpoption/phpoption",
