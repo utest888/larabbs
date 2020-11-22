@@ -12,6 +12,11 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable, MustVerifyEmailTrait;
 
+    public function topics()
+    {
+        return $this->hasMany(Topic::class);
+    }
+
     /**
      * The attributes that are mass assignable.
      *
