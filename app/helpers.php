@@ -24,3 +24,17 @@ function category_nav_active($category_id)
     }
     return '';
 }
+
+function is_order_by($arg)
+{
+    if (request()->query('order') == 'recent') {
+        if ($arg == 0) {
+            return 'active';
+        }
+    } else {
+        if ($arg == 1) {
+            return 'active';
+        }
+    }
+    return '';
+}

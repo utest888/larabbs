@@ -14,8 +14,16 @@
     <div class="card ">
       <div class="card-header bg-transparent">
         <ul class="nav nav-pills">
-          <li class="nav-item"><a class="nav-link active" href="#">最后回复</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">最新发布</a></li>
+          <li class="nav-item">
+            <a class="nav-link {{ is_order_by(1) }}" href="{{Request::url()}}?order=default">
+              最后回复
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{ is_order_by(0) }}" href="{{Request::url()}}?order=recent">
+              最新发布
+            </a>
+          </li>
         </ul>
       </div>
       <div class="card-body">
