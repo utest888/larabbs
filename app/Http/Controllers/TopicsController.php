@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Handlers\ImageUploadHandler;
 use App\Models\Topic;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -14,6 +15,26 @@ class TopicsController extends Controller
 	public function __construct()
 	{
 		$this->middleware('auth', ['except' => ['index', 'show']]);
+	}
+
+	public function uploadImage(Request $request, ImageUploadHandler $uploader)
+	{
+		$data = [
+			'success' => false,
+			'msg' => '上传失败',
+			'file_path' => ''
+		];
+
+		if ($file = $request->upload_file) {
+			$result = $uploader->save($file, 'topics', Auth::id(), 1024);
+			if ($result) {
+				$data['file_path'] = $result['path'];
+				$data['msg'] = '上传成功！';
+				$data['success'] = true;
+			}
+		}
+
+		return $data;
 	}
 
 	public function index(Request $request, Topic $topic)
