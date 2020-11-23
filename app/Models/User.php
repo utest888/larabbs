@@ -7,14 +7,31 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable, MustVerifyEmailTrait;
+    use HasFactory, MustVerifyEmailTrait;
+    use Notifiable {
+        notify as protected laravelNotify;
+    }
 
     public function isAuthorOf($model)
     {
         return $this->id == $model->user_id;
+    }
+
+    public function notify($instance)
+    {
+        if ($this->id == Auth::id()) {
+            return;
+        }
+
+        if (method_exists($instance, 'toDatebase')) {
+            $this->increment('notification_count');
+        }
+
+        $this->laravelNotify($instance);
     }
 
     public function topics()
