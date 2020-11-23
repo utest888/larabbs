@@ -23,10 +23,14 @@ class TopicObserver
 
         //生成话题摘录
         $topic->excerpt = make_excerpt($topic->body);
+    }
 
+    public function saved(Topic $topic)
+    {
         //如slug字段无内容，使用翻译器对title进行翻译
         if (empty($topic->slug)) {
             // $topic->slug = app(SlugTranslateHandler::class)->translate($topic->title);
+            //推送任务到队列
             dispatch(new TranslateSlug($topic));
         }
     }
