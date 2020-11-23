@@ -2,6 +2,7 @@
 
 use App\Http\Requests\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
 
 function route_class()
 {
@@ -24,6 +25,13 @@ function category_nav_active($category_id)
     }
     return '';
 }
+
+function make_excerpt($value, $length = 200)
+{
+    $excerpt = trim(preg_replace('/\r\n|\r|\n+/', ' ', strip_tags($value)));
+    return Str::limit($excerpt, $length);
+}
+
 
 function is_order_by($arg)
 {
