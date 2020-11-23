@@ -16,6 +16,14 @@ class User extends Authenticatable
         notify as protected laravelNotify;
     }
 
+    public function markAsRead()
+    {
+        $this->notification_count = 0;
+        $this->save();
+
+        $this->unreadNotifications->markAsRead();
+    }
+
     public function isAuthorOf($model)
     {
         return $this->id == $model->user_id;
@@ -27,7 +35,7 @@ class User extends Authenticatable
             return;
         }
 
-        if (method_exists($instance, 'toDatebase')) {
+        if (method_exists($instance, 'toDatabase')) {
             $this->increment('notification_count');
         }
 
