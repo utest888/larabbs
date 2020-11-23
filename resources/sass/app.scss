@@ -127,7 +127,20 @@ body {
         h1 {
             margin: 0.4em auto 0.6em;
             font-size: 28px;
-            line-height: 387px;
+            // line-height: 387px;
         }
+    }
+}
+
+
+/* 回复列表 */
+
+.topic-reply {
+    a {
+        color: inherit;
+    }
+    .meta {
+        font-size: .9em;
+        color: #b3b3b3;
     }
 }

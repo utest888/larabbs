@@ -46,3 +46,13 @@ function is_order_by($arg)
     }
     return '';
 }
+
+function if_query($query, $value)
+{
+    return request()->query($query) == $value;
+}
+
+function active_class($active)
+{
+    return $active ? 'active' : '';
+}
