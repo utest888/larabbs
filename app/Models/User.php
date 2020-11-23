@@ -14,6 +14,7 @@ use Illuminate\Support\Str;
 class User extends Authenticatable
 {
     use HasFactory, MustVerifyEmailTrait, HasRoles;
+    use Traits\ActiveUserHelper;
     use Notifiable {
         notify as protected laravelNotify;
     }
