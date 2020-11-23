@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0581a2487648d9b639058bb437210a40",
+    "content-hash": "b152a2799751a8520c08143fd4678ce7",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -182,6 +182,60 @@
             },
             "abandoned": "https://github.com/Laravel-Lang/lang",
             "time": "2020-03-17T15:24:26+00:00"
+        },
+        {
+            "name": "ckeditor/ckeditor",
+            "version": "4.15.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ckeditor/ckeditor4-releases.git",
+                "reference": "b1aa2f31687b5d48a4f4a9a94d388b525a82663f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ckeditor/ckeditor4-releases/zipball/b1aa2f31687b5d48a4f4a9a94d388b525a82663f",
+                "reference": "b1aa2f31687b5d48a4f4a9a94d388b525a82663f",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+",
+                "LGPL-2.1+",
+                "MPL-1.1+"
+            ],
+            "authors": [
+                {
+                    "name": "CKSource",
+                    "homepage": "https://cksource.com"
+                }
+            ],
+            "description": "JavaScript WYSIWYG web text editor.",
+            "homepage": "https://ckeditor.com/ckeditor-4/",
+            "keywords": [
+                "CKEditor",
+                "ckeditor4",
+                "editor",
+                "fckeditor",
+                "html",
+                "javascript",
+                "richtext",
+                "text",
+                "wysiwyg"
+            ],
+            "support": {
+                "forum": "https://stackoverflow.com/tags/ckeditor",
+                "issues": "https://github.com/ckeditor/ckeditor4/issues",
+                "source": "https://github.com/ckeditor/ckeditor4",
+                "wiki": "https://ckeditor.com/docs/ckeditor4/latest/"
+            },
+            "time": "2020-11-09T14:21:03+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1304,16 +1358,16 @@
         },
         {
             "name": "laravel/horizon",
-            "version": "v5.4.0",
+            "version": "5.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "d08d10ee12f53b7ba2cbb938eb23857e93fe51d3"
+                "reference": "4fda34ae7af5a9ca2d3e6061ee2ee0eb60a316f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/d08d10ee12f53b7ba2cbb938eb23857e93fe51d3",
-                "reference": "d08d10ee12f53b7ba2cbb938eb23857e93fe51d3",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/4fda34ae7af5a9ca2d3e6061ee2ee0eb60a316f9",
+                "reference": "4fda34ae7af5a9ca2d3e6061ee2ee0eb60a316f9",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1379,7 +1433,7 @@
                 "laravel",
                 "queue"
             ],
-            "time": "2020-11-03T16:55:40+00:00"
+            "time": "2020-11-21T16:45:01+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -3210,6 +3264,72 @@
                 }
             ],
             "time": "2020-09-16T16:47:18+00:00"
+        },
+        {
+            "name": "summerblue/administrator",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/administrator",
+                "reference": "792445c6e32a1beb359b5c3259e03941a4f6b541"
+            },
+            "require": {
+                "ckeditor/ckeditor": "4.*",
+                "laravel/framework": "8.*.*",
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~5.7.12"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Frozennode\\Administrator\\AdministratorServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/controllers"
+                ],
+                "psr-0": {
+                    "Frozennode\\Administrator": "src/"
+                }
+            },
+            "scripts": {
+                "post-update-cmd": [
+                    "if [ -d \"public/js/ckeditor/\" ] \nthen \nrm -R public/js/ckeditor/ \nfi ",
+                    "if [ -d \"vendor/ckeditor/ckeditor/\" ] \nthen \nmv vendor/ckeditor/ckeditor/ public/js/  \nfi",
+                    "if [ -d \"vendor/ckeditor/\" ] \nthen \nrm -R vendor/ckeditor/ \nfi"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Summer",
+                    "email": "summer@learnku.com"
+                }
+            ],
+            "description": "A database interface package for Laravel, modified!",
+            "homepage": "https://github.com/summerblue/administrator",
+            "keywords": [
+                "admin",
+                "administrator",
+                "cms",
+                "database",
+                "laravel",
+                "laravel-administrator"
+            ],
+            "support": {
+                "issues": "https://github.com/summerblue/administrator/issues"
+            },
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -8953,8 +9073,10 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
-    "prefer-stable": true,
+    "stability-flags": {
+        "summerblue/administrator": 20
+    },
+    "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": "^7.3|^8.0"
