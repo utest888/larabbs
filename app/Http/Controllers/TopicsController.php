@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TopicRequest;
 use App\Models\Category;
+use App\Models\Link;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -38,13 +39,16 @@ class TopicsController extends Controller
 		return $data;
 	}
 
-	public function index(Request $request, Topic $topic, User $user)
+	public function index(Request $request, Topic $topic, User $user, Link $link)
 	{
 		$topics = $topic->withOrder($request->order)->with('user', 'category')->paginate(30);
 
 		$active_users = $user->getActiveUsers();
 		// $topics = Topic::paginate(30);
-		return view('topics.index', compact('topics', 'active_users'));
+
+		$links = $link->getAllCached();
+
+		return view('topics.index', compact('topics', 'active_users', 'links'));
 	}
 
 	public function show(Request $request, Topic $topic)
