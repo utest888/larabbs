@@ -12,6 +12,11 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable, MustVerifyEmailTrait;
 
+    public function isAuthorOf($model)
+    {
+        return $this->id == $model->user_id;
+    }
+
     public function topics()
     {
         return $this->hasMany(Topic::class);
