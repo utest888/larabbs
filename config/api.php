@@ -166,7 +166,7 @@ return [
     */
 
     'auth' => [
-        'jwt' => 'Dingo\ApiAuth\Provider\JWT',
+        'jwt' => Dingo\Api\Auth\Provider\JWT::class,
     ],
 
     /*
