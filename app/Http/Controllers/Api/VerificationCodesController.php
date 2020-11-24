@@ -16,18 +16,23 @@ class VerificationCodesController extends Controller
     {
         $phone = $request->phone;
 
-        $code = mt_rand(100000, 999999);
+        if (!app()->environment('production')) {
+            $code = '1234';
+        } else {
 
-        try {
-            $result = $easySms->send($phone, [
-                'content' => "【lbbs社区】您的验证码是{$code}"
-            ]);
-        } catch (NoGatewayAvailableException $e) {
-            $message = $e->getException('yunpian');
-            return $this->response()->errorInternal($message ?: '发送失败');
+            $code = mt_rand(100000, 999999);
+
+            try {
+                $result = $easySms->send($phone, [
+                    'content' => "【lbbs社区】您的验证码是{$code}"
+                ]);
+            } catch (NoGatewayAvailableException $e) {
+                $message = $e->getException('yunpian');
+                return $this->response()->errorInternal($message ?: '发送失败');
+            }
         }
 
-        $key = 'verificationCode_' . Str::rand(15);
+        $key = 'verificationCode_' . Str::random(15);
         $expiredAt = now()->addMinutes(10);
 
         Cache::put($key, ['phone' => $phone, 'code' => $code], $expiredAt);
