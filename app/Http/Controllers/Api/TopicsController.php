@@ -11,10 +11,14 @@ use Illuminate\Http\Request;
 class TopicsController extends Controller
 {
 
-    public function userIndex(User $user, Request $request)
+    public function show(Topic $topic)
     {
-        dd(count($user->topics()));
-        $topics = $user->topics()->recent()->paginate(20);
+        return $this->response->item($topic, new TopicTransformer());
+    }
+
+    public function userIndex(Request $request, User $user)
+    {
+        $topics = Topic::where('user_id', $user->id)->paginate(20);
         return $this->response->paginator($topics, new TopicTransformer());
     }
 
