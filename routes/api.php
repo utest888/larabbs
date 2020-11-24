@@ -20,10 +20,10 @@ use Illuminate\Support\Facades\Route;
 
 $api = app(Dingo\Api\Routing\Router::class);
 
-$api->version('v1', function ($api) {
-    $api->get('version', function () {
-        return response('this is version v1');
-    });
+$api->version('v1', [
+    'namespace' => 'App\Http\Controllers\Api'
+], function ($api) {
+    $api->post('verificationCodes', 'VerificationCodesController@store')->name('api.verificationCodes.store');
 });
 
 $api->version('v2', function ($api) {
