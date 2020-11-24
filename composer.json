@@ -16,6 +16,7 @@
         "fruitcake/laravel-cors": "^2.0",
         "gregwar/captcha": "9999999-dev",
         "guzzlehttp/guzzle": "~6.3",
+        "illuminate/auth": "^8.15",
         "intervention/image": "^2.5",
         "laravel/framework": "^8.12",
         "laravel/horizon": "~5.4",
@@ -29,6 +30,7 @@
         "socialiteproviders/weixin": "9999999-dev",
         "spatie/laravel-permission": "~3.0",
         "summerblue/administrator": "dev-main",
+        "tymon/jwt-auth": "^1.0",
         "viacreative/sudo-su": "~1.1"
     },
     "require-dev": {
@@ -67,11 +69,7 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": false,
-    "repositories": [{
-        "type": "path",
-        "url": "packages/administrator"
-    }],
+    "prefer-stable": true,
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
