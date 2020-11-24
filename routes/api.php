@@ -21,8 +21,8 @@ use Illuminate\Support\Facades\Route;
 $api = app(Dingo\Api\Routing\Router::class);
 
 $api->version('v1', [
-    'middleware' => 'serializer:array',
-    'namespace' => 'App\Http\Controllers\Api'
+    'namespace' => 'App\Http\Controllers\Api',
+    'middleware' => ['serializer:array']
 ], function ($api) {
     $api->group([
         'middleware' => 'api.throttle',
@@ -61,6 +61,9 @@ $api->version('v1', [
 
             //发布话题
             $api->post('topics', 'TopicsController@store')->name('api.topics.store');
+
+            //修改话题
+            $api->patch('topics/{topic}', 'TopicsController@update')->name('api.topics.update');
         });
     });
 });

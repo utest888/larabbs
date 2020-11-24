@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use Dingo\Api\Facade\API;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
@@ -18,6 +20,10 @@ class AppServiceProvider extends ServiceProvider
         if (app()->isLocal()) {
             $this->app->register(\VIACreative\SudoSu\ServiceProvider::class);
         }
+
+        API::error(function (ModelNotFoundException $e) {
+            abort(404);
+        });
     }
 
     /**
