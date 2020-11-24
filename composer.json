@@ -41,6 +41,7 @@
         "laravel/ui": "^3.1",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
+        "overtrue/laravel-query-logger": "^2.0",
         "phpunit/phpunit": "^9.3.3",
         "summerblue/generator": "7.*"
     },

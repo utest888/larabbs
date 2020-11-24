@@ -21,9 +21,9 @@ class AppServiceProvider extends ServiceProvider
             $this->app->register(\VIACreative\SudoSu\ServiceProvider::class);
         }
 
-        API::error(function (ModelNotFoundException $e) {
-            abort(404);
-        });
+        // API::error(function (ModelNotFoundException $e) {
+        //     abort(404);
+        // });
     }
 
     /**
