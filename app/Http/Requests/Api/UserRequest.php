@@ -25,7 +25,7 @@ class UserRequest extends FormRequest
     {
         return [
             //
-            'name' => ['required', 'between:3,25', 'regex:/^\w+$/'],
+            'name' => ['required', 'between:3,25', 'regex:/^\w+$/', 'unique:users,name'],
             'password' => ['required', 'string', 'min:6'],
             'verification_key' => ['required', 'string'],
             'verification_code' => ['required', 'string']
