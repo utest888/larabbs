@@ -76,6 +76,12 @@ $api->version('v1', [
 
             //删除话题
             $api->delete('topics/{topic}', 'TopicsController@destroy')->name('api.topics.destroy');
+
+            //发布回复
+            $api->post('topics/{topic}/replies', 'RepliesController@store')->name('api.replies.store');
+
+            //当前用户的权限
+            $api->get('user/permissions', 'PermissionsController@index')->name('api.user.permissions.index');
         });
     });
 });
